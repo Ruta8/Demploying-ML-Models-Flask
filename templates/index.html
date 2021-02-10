@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <div class="login">
+        <h1>Predict House Prices</h1>
+
+        <!-- Main input for receiving query to model -->
+        <form action="{{ url_for('predict')}}" method="post">
+            <div>
+                <p>CRIM: per capita crime rate by town</p><input type="text" name="CRIM" placeholder="CRIM"
+                    required="required" />
+            </div>
+            <div>
+                <p>ZN: proportion of residential land zoned for lots over 25,000 sq.ft.</p><input type="text" name="ZN"
+                    placeholder="ZN" required="required" />
+            </div>
+            <div>
+                <p>INDUS: proportion of non-retail business acres per town</p><input type="text" name="INDUS"
+                    placeholder="INDUS" required="required" />
+            </div>
+            <div>
+                <p>CHAS: Charles River dummy variable (= 1 if tract bounds river; 0 otherwise)</p><input type="text"
+                    name="CHAS" placeholder="CHAS" required="required" />
+            </div>
+            <div>
+                <p>NOX: nitric oxides concentration (parts per 10 million)</p><input type="text" name="NOX"
+                    placeholder="NOX" required="required" />
+            </div>
+            <div>
+                <p>RM: average number of rooms per dwelling</p><input type="text" name="RM" placeholder="RM"
+                    required="required" />
+            </div>
+            <div>
+                <p>AGE: proportion of owner-occupied units built prior to 1940</p><input type="text" name="AGE"
+                    placeholder="AGE" required="required" />
+            </div>
+            <div>
+                <p>DIS: weighted distances to five Boston employment centres</p><input type="text" name="DIS"
+                    placeholder="DIS" required="required" />
+            </div>
+            <div>
+                <p>RAD: index of accessibility to radial highways</p><input type="text" name="RAD" placeholder="RAD"
+                    required="required" />
+            </div>
+            <div>
+                <p>TAX: full-value property-tax rate per $10,000</p><input type="text" name="TAX" placeholder="TAX"
+                    required="required" />
+            </div>
+            <div>
+                <p>PTRATIO: pupil-teacher ratio by town</p><input type="text" name="PTRATIO" placeholder="PTRATIO"
+                    required="required" />
+            </div>
+            <div>
+                <p>B: 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town</p><input type="text" name="B"
+                    placeholder="B" required="required" />
+            </div>
+            <div>
+                <p>LSTAT: % lower status of the population</p><input type="text" name="LSTAT" placeholder="LSTAT"
+                    required="required" />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+        <div>{{ prediction_text }}</div>
+
+    </div>
+
+
+</body>
+
+</html>
